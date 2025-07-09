@@ -30,7 +30,7 @@ cd message-queue
 2. Start all services:
 
 ```bash
-docker-compose up --build
+docker compose up --build
 ```
 
 This will start:
@@ -38,38 +38,6 @@ This will start:
 - RabbitMQ server on port 5672 (AMQP) and 15672 (Management UI)
 - Producer service on port 8080
 - Consumer service on port 8081
-
-### Local Development
-
-1. Start RabbitMQ locally or use Docker:
-
-```bash
-docker run -d --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3-management
-```
-
-2. Set environment variables:
-
-```bash
-export RABBITMQ_HOST=localhost
-export RABBITMQ_PORT=5672
-export RABBITMQ_USER=guest
-export RABBITMQ_PASSWORD=guest
-export QUEUE_NAME=my_queue
-export EXCHANGE_NAME=my_exchange
-export ROUTING_KEY=my_routing_key
-```
-
-3. Build and run services:
-
-```bash
-# Producer
-cd producer
-./mvnw spring-boot:run
-
-# Consumer (in another terminal)
-cd consumer
-./mvnw spring-boot:run
-```
 
 ## API Endpoints
 
