@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: producer
+  profiles:
+    active: dev
+  rabbitmq:
+    host: ${RABBITMQ_HOST}
+    port: ${RABBITMQ_PORT}
+    username: ${RABBITMQ_USER}
+    password: ${RABBITMQ_PASSWORD}

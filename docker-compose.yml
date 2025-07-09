@@ -12,5 +12,22 @@ services:
       RABBITMQ_DEFAULT_USER: guest
       RABBITMQ_DEFAULT_PASS: guest
 
+  producer:
+    build: ./producer
+    container_name: producer
+    depends_on:
+      - rabbitmq
+    environment:
+      SPRING_PROFILES_ACTIVE: beta
+      RABBITMQ_HOST: rabbitmq
+      RABBITMQ_PORT: 5672
+      RABBITMQ_USER: guest
+      RABBITMQ_PASSWORD: guest
+      QUEUE_NAME: my_queue
+      EXCHANGE_NAME: my_exchange
+      ROUTING_KEY: my_routing_key
+    ports:
+      - "8080:8080" # Expose producer service on port 8080
+
 volumes:
   rabbitmq_data:
