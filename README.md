@@ -23,7 +23,7 @@ A Spring Boot microservices project demonstrating message queue implementation u
 1. Clone the repository:
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/juavazquez/message-queue.git
 cd message-queue
 ```
 
